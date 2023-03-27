@@ -16,6 +16,11 @@ const {ioHandler} =require('./socketHandler');
 ioHandler();
 
 
+app.get('/',(req,res)=>{
+    res.send('working');
+})
+
+
 
 server.listen(4000,()=>{
     console.log(`server started at http://localhost:4000`);
