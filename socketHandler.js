@@ -25,12 +25,12 @@ module.exports.ioHandler=()=>{
 
    
 
-        socket.on('addUser',(userId,socketId)=>{
-            console.log(userId,socketId);
+        socket.on('addUser',(userId)=>{
+            console.log(userId);
             const isJoined=alreadyJoinedUser(userId);
 
             if(!isJoined){
-                users.push({userId,socketId});
+                users.push({userId,socketId:socket.id});
                 console.log(users);
                 console.log('joined successfully');
             }
